@@ -1,15 +1,21 @@
 {
-  "name": "expressjstestcollection",
-  "version": "1.0.0",
-  "description": "ExpressjsTestCollection is a test collection server writen in Express.js",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.19.2"
-  }
+    "name": "expressjstestcollection",
+    "version": "1.0.0",
+    "description": "ExpressjsTestCollection is a test collection server writen in Express.js",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./server.js",
+        "dev": "nodemon ./server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2",
+        "socket.io": "^4.7.5"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.2"
+    }
 }
