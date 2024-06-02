@@ -14,7 +14,6 @@
     "dependencies": {
         "express": "^4.19.2",
         "rtsp-ffmpeg": "^0.0.17",
-        "socket.io": "^4.7.5",
         "ws": "^8.17.0"
     },
     "devDependencies": {
