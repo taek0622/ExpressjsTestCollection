@@ -22,8 +22,20 @@ module.exports = (server) => {
         // 메시지 수신
         ws.on("message", (message) => {
             const json = JSON.parse(message);
-            console.log(json);
-            ws.send(JSON.stringify(json));
+            const uuid = uuidv4();
+            let output = {
+                messageID: uuid,
+                userID: json.userID,
+                message: json.message,
+                date: json.date,
+            };
+            console.log(output);
+
+            wss.clients.forEach((client) => {
+                if (client !== ws && client.readyState === WebSocket.OPEN) {
+                    client.send(JSON.stringify(output));
+                }
+            });
         });
 
         // 에러 발생
