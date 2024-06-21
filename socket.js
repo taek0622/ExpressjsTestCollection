@@ -1,4 +1,5 @@
 const WebSocket = require("ws");
+const { v4: uuidv4 } = require("uuid");
 
 module.exports = (server) => {
     const wss = new WebSocket.Server({ server, path: "/chat" });
