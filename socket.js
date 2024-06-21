@@ -59,12 +59,5 @@ module.exports = (server) => {
             });
             clearInterval(ws.interval);
         });
-
-        // 지정된 시간마다 메시지 전송
-        ws.interval = setInterval(() => {
-            if (ws.readyState == ws.OPEN) {
-                ws.send("서버에서 클라이언트로 메시지를 보냅니다");
-            }
-        }, 3000);
     });
 };
