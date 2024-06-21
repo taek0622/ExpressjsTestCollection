@@ -46,6 +46,17 @@ module.exports = (server) => {
         // 연결 종료
         ws.on("close", () => {
             console.log("클라이언트 접속 해제", ip);
+            const uuid = uuidv4();
+            wss.clients.forEach((client) => {
+                client.send(
+                    JSON.stringify({
+                        messageID: uuid,
+                        userID: "SystemMessage",
+                        message: "상대 유저가 접속을 해제했습니다.",
+                        date: "2024-11-01",
+                    })
+                );
+            });
             clearInterval(ws.interval);
         });
 
