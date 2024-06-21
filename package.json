@@ -14,6 +14,7 @@
     "dependencies": {
         "express": "^4.19.2",
         "rtsp-ffmpeg": "^0.0.17",
+        "uuid": "^10.0.0",
         "ws": "^8.17.0"
     },
     "devDependencies": {
