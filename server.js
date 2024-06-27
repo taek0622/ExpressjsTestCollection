@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const webSocket = require("./socket");
+const streaming = require("./streaming");
 
 app.use((req, res, next) => {
     next();
@@ -19,3 +20,4 @@ const server = app.listen(port, () => {
 });
 
 webSocket(server);
+streaming();
