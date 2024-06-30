@@ -1,5 +1,6 @@
 const WebSocket = require("ws");
 const { v4: uuidv4 } = require("uuid");
+const moment = require("moment");
 
 module.exports = (server) => {
     const wss = new WebSocket.Server({ server, path: "/chat" });
@@ -14,7 +15,7 @@ module.exports = (server) => {
                     messageID: uuid,
                     userID: "SystemMessage",
                     message: "새로운 유저가 접속했습니다.",
-                    date: "2024-11-01",
+                    date: moment().format("YYYY-MM-DD HH:mm:ss.SSS"),
                 })
             );
         });
@@ -27,7 +28,7 @@ module.exports = (server) => {
                 messageID: uuid,
                 userID: json.userID,
                 message: json.message,
-                date: json.date,
+                date: moment().format("YYYY-MM-DD HH:mm:ss.SSS"),
             };
             console.log(output);
 
@@ -53,7 +54,7 @@ module.exports = (server) => {
                         messageID: uuid,
                         userID: "SystemMessage",
                         message: "상대 유저가 접속을 해제했습니다.",
-                        date: "2024-11-01",
+                        date: moment().format("YYYY-MM-DD HH:mm:ss.SSS"),
                     })
                 );
             });
