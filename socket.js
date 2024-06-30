@@ -25,7 +25,7 @@ module.exports = (server) => {
             const json = JSON.parse(message);
             const uuid = uuidv4();
             let output = {
-                messageID: uuid,
+                messageID: json.messageID || uuid,
                 userID: json.userID,
                 message: json.message,
                 date: moment().format("YYYY-MM-DD HH:mm:ss.SSS"),
