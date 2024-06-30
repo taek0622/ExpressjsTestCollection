@@ -13,6 +13,7 @@
     "license": "ISC",
     "dependencies": {
         "express": "^4.19.2",
+        "moment": "^2.30.1",
         "node-media-server": "^2.7.0",
         "rtsp-ffmpeg": "^0.0.17",
         "uuid": "^10.0.0",
